@@ -8,8 +8,8 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import SportsFootballIcon from '@material-ui/icons/SportsFootball';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const useStyles = makeStyles({
   list: {
@@ -42,9 +42,9 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['NFL Articles', 'NFL Videos', 'Sign Out', 'Back to Home'].map((text, index) => (
+        {['NFL Articles', 'NFL Videos', 'Back to Home'].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon>{index === 0 || index === 1 ? <SportsFootballIcon /> : <ExitToAppIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -57,7 +57,7 @@ export default function TemporaryDrawer() {
   return (
     <div>
       
-          <Button onClick={toggleDrawer(true)}>Bottom</Button>
+          <Button variant="outlined" color="secondary" onClick={toggleDrawer(true)}>Bottom</Button>
           <Drawer anchor='bottom' open={drawer} onClose={toggleDrawer(false)}>
             {list('bottom')}
           </Drawer>

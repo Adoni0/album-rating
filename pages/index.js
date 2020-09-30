@@ -12,7 +12,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Hidden from '@material-ui/core/Hidden'
 import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
-import Header from './Header'
+import Header from '../components/Header'
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
