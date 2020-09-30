@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://source.unsplash.com/user/erondu)',
+    backgroundImage: 'url(https://images.pexels.com/photos/139762/pexels-photo-139762.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
@@ -59,11 +59,11 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const sections = [
-  { title: 'NFL', url: '#' },
+  { title: 'NFL', url: '/NFL' },
   { title: 'NBA', url: '#' },
   { title: 'PGA', url: '#' },
   { title: 'MLB', url: '#' },
-  { title: 'MLS', url: '#' }
+  { title: 'Soccer', url: '#' }
   // { title: 'Opinion', url: '#' },
   // { title: 'Science', url: '#' },
   // { title: 'Health', url: '#' },
@@ -88,11 +88,11 @@ const featuredPosts = [
 
 const Blog = () => {
   const classes = useStyles()
-
+ 
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <Container style={{backgroundColor: '#ffffff', backgroundImage: 'linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%)'}} maxWidth="lg">
       <Header title="SportHub" sections={sections} />
         
         <main>
