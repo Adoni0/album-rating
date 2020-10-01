@@ -2,6 +2,6 @@
   "/_document": "pages/_document.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/NFL": "pages/NFL.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/NFL": "pages/NFL.js"
 }
