@@ -1,1 +1,1 @@
-# sport-hub
+# AlbumRate

@@ -8,9 +8,12 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import SportsFootballIcon from '@material-ui/icons/SportsFootball';
+import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import MenuIcon from '@material-ui/icons/Menu';
+import AlbumIcon from '@material-ui/icons/Album';
+import MusicVideoIcon from '@material-ui/icons/MusicVideo';
+import Link from 'next/link'
+
 
 const useStyles = makeStyles({
   list: {
@@ -45,18 +48,22 @@ export default function TemporaryDrawer() {
       
       <List>
           <ListItem button>
-            <ListItemIcon><SportsFootballIcon /></ListItemIcon>
-            <ListItemText primary={'NFL Articles'} />
+            <ListItemIcon><PlayCircleFilledIcon /></ListItemIcon>
+            <ListItemText primary={'Rock Most Popular'} />
           </ListItem>
 
           <ListItem button>
-            <ListItemIcon><SportsFootballIcon /></ListItemIcon>
-            <ListItemText primary={'NFL Videos'} />
+            <ListItemIcon><MusicVideoIcon /></ListItemIcon>
+            <ListItemText primary={'Rock MusicVideos'} />
           </ListItem>
 
           <ListItem button>
             <ListItemIcon><ExitToAppIcon /></ListItemIcon>
-            <ListItemText primary={'Back to Home'} />
+            <ListItemText>
+              <Link href={'/'}>
+              <a>Back to Home</a>
+              </Link>
+            </ListItemText>
           </ListItem>
         
       </List>
@@ -68,7 +75,7 @@ export default function TemporaryDrawer() {
   return (
     <div>
       
-          <Button variant="outlined" color="secondary" onClick={toggleDrawer(true)}><MenuIcon /></Button>
+          <Button variant="outlined" color="secondary" onClick={toggleDrawer(true)}><AlbumIcon /></Button>
           <Drawer anchor='bottom' open={drawer} onClose={toggleDrawer(false)}>
             {list('bottom')}
           </Drawer>

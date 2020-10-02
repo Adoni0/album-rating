@@ -5,9 +5,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import DescriptionIcon from '@material-ui/icons/Description';
-import VideocamIcon from '@material-ui/icons/Videocam';
 import Divider from '@material-ui/core/Divider';
+import MusicVideoIcon from '@material-ui/icons/MusicVideo';
+import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 // import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,10 +30,10 @@ export function ArticleDivider() {
             <ListItem>
                 <ListItemAvatar>
                     <Avatar>
-                        <DescriptionIcon />
+                        <LibraryMusicIcon />
                     </Avatar>
                 </ListItemAvatar>
-                <ListItemText style={{ color: 'white' }} primary="Featured Articles" />
+                <ListItemText style={{ color: 'white' }} primary="Featured Albums" />
             </ListItem>
             <Divider variant="inset" component="li" />
 
@@ -50,10 +50,10 @@ export function VideoDivider() {
             <ListItem>
                 <ListItemAvatar>
                     <Avatar>
-                        <VideocamIcon />
+                        <MusicVideoIcon />
                     </Avatar>
                 </ListItemAvatar>
-                <ListItemText style={{ color: 'white' }} primary="Featured Videos" />
+                <ListItemText style={{ color: 'white' }} primary="Featured MusicVideos" />
             </ListItem>
             <Divider variant="inset" component="li" />
 

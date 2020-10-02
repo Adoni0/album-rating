@@ -14,6 +14,7 @@ import Link from '@material-ui/core/Link'
 import Container from '@material-ui/core/Container'
 import Header from '../components/Header'
 
+
 const useStyles = makeStyles(theme => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
-    backgroundImage: 'url(https://images.pexels.com/photos/139762/pexels-photo-139762.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)',
+    backgroundImage: 'url(https://images.pexels.com/photos/4200747/pexels-photo-4200747.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
@@ -59,14 +60,14 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const sections = [
-  { title: 'NFL', url: '/NFL' },
-  { title: 'NBA', url: '#' },
-  { title: 'PGA', url: '#' },
-  { title: 'MLB', url: '#' },
-  { title: 'Soccer', url: '#' }
-  // { title: 'Opinion', url: '#' },
-  // { title: 'Science', url: '#' },
-  // { title: 'Health', url: '#' },
+  { title: 'Rock', url: '/rock' },
+  { title: 'Hip/Hop', url: '#' },
+  { title: 'Alternative', url: '#' },
+  { title: 'Country', url: '#' },
+  { title: 'Dance', url: '#' },
+  { title: 'R&B', url: '#' },
+  { title: 'Most Popular', url: '#' },
+  { title: 'Highest Rated', url: '#' }
   // { title: 'Style', url: '#' },
   // { title: 'Travel', url: '#' },
 ];
@@ -93,7 +94,7 @@ const Blog = () => {
     <>
       <CssBaseline />
       <Container style={{backgroundColor: '#ffffff', backgroundImage: 'linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%)'}} maxWidth="lg">
-      <Header title="SportHub" sections={sections} />
+      <Header title="AlbumRate" sections={sections} />
         
         <main>
           {/* Main featured post */}
@@ -111,7 +112,7 @@ const Blog = () => {
               <Grid item md={6}>
                 <div className={classes.mainFeaturedPostContent}>
                   <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                    Title of a longer featured blog post
+                    The Social App for Music Lovers
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
                     Multiple lines of text that form the lede, informing new readers

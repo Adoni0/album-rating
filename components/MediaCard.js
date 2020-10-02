@@ -12,22 +12,22 @@ import Carousel from 'react-material-ui-carousel'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 700,
+    maxWidth: 400,
     margin: 'auto'
   },
   media: {
-    height: 140,
+    height: 250,
   },
 }));
 
 export function Pony(props) {
   var items = [
     {
-      title: 'Football Stuff',
+      title: 'Music Stuff',
       description: 'blah blah balh jbjeneneknkenjejbjjjeh ehjejejej dhejjebhjebjebhjje enjehufbueneenineu nejfjebe ejnene nejne'
     },
     {
-      title: 'NFL and Covid',
+      title: 'Music and Covid',
       description: 'titans and steelers will postpone their game on sunday opting to move it to another day in the not too distant future.'
     }
   ]
@@ -51,8 +51,8 @@ export function MediaCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://images.pexels.com/photos/2570139/pexels-photo-2570139.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-          title="football"
+          image="https://images.pexels.com/photos/952437/pexels-photo-952437.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          title="music"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

@@ -10,7 +10,9 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
+    "express": "^4.17.1",
     "markdown-to-jsx": "^7.0.0",
+    "mongoose": "^5.10.7",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
