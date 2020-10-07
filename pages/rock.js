@@ -1,12 +1,12 @@
 import React from 'react'
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Typography from '@material-ui/core/Typography'
+import Container from '@material-ui/core/Container'
 import { Pony } from '../components/MediaCard'
 import TemporaryDrawer from '../components/TemporaryDrawer'
 import { ArticleDivider, VideoDivider } from '../components/Dividers'
 import SearchBar from '../components/SearchBar'
-import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid'
 
 
 export default function rock() {
@@ -40,3 +40,5 @@ export default function rock() {
 
     )
 }
+
+

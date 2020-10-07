@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Carousel from 'react-material-ui-carousel'
+import axios from 'axios'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,7 +21,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Pony(props) {
+export function Pony({ featured }) {
+  console.log(featured)
+
   var items = [
     {
       title: 'Music Stuff',
@@ -73,4 +76,15 @@ export function MediaCard(props) {
       </CardActions>
     </Card>
   );
+}
+
+
+export async function getStaticProps() {
+  var response = await axios.get(`https://itunes.apple.com/lookup?id=158038,486597,994656,5040714&entity=album&limit=5`);
+  console.log(response)
+  return {
+    featured: {
+      response,
+    },
+  }
 }
