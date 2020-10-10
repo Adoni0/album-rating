@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const sections = [
-  { title: 'Rock', url: '/rock' },
+  { title: 'Rock', url: '/music/rock' },
   { title: 'Hip/Hop', url: '#' },
   { title: 'Alternative', url: '#' },
   { title: 'Country', url: '#' },

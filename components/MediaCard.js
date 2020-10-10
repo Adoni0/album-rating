@@ -8,7 +8,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Carousel from 'react-material-ui-carousel'
-import axios from 'axios'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,19 +20,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export function Pony({ featured }) {
-  console.log(featured)
-
+export function Pony(props) {
+  const { albums } = props;
   var items = [
-    {
-      title: 'Music Stuff',
-      description: 'blah blah balh jbjeneneknkenjejbjjjeh ehjejejej dhejjebhjebjebhjje enjehufbueneenineu nejfjebe ejnene nejne'
-    },
-    {
-      title: 'Music and Covid',
-      description: 'titans and steelers will postpone their game on sunday opting to move it to another day in the not too distant future.'
-    }
+    albums.map(album => (
+      {
+        title: album.artistName,
+        description: album.collectionName,
+        image: album.artworkUrl100
+      }
+    ))
   ]
+  // var items = [
+  //   {
+  //     title: 'Music Stuff',
+  //     description: 'blah blah balh jbjeneneknkenjejbjjjeh ehjejejej dhejjebhjebjebhjje enjehufbueneenineu nejfjebe ejnene nejne'
+  //   },
+  //   {
+  //     title: 'Music and Covid',
+  //     description: 'titans and steelers will postpone their game on sunday opting to move it to another day in the not too distant future.'
+  //   }
+  // ]
 
   return (
     <Carousel interval={5000} navButtonsAlwaysVisible={true}>
@@ -54,7 +61,7 @@ export function MediaCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://images.pexels.com/photos/952437/pexels-photo-952437.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          image= {item.image}
           title="music"
         />
         <CardContent>
@@ -76,15 +83,4 @@ export function MediaCard(props) {
       </CardActions>
     </Card>
   );
-}
-
-
-export async function getStaticProps() {
-  var response = await axios.get(`https://itunes.apple.com/lookup?id=158038,486597,994656,5040714&entity=album&limit=5`);
-  console.log(response)
-  return {
-    featured: {
-      response,
-    },
-  }
 }
