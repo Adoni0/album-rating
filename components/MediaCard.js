@@ -22,30 +22,18 @@ const useStyles = makeStyles((theme) => ({
 
 export function Pony(props) {
   const { albums } = props;
-  var items = [
-    albums.map(album => (
-      {
-        title: album.artistName,
-        description: album.collectionName,
-        image: album.artworkUrl100
-      }
-    ))
-  ]
-  // var items = [
-  //   {
-  //     title: 'Music Stuff',
-  //     description: 'blah blah balh jbjeneneknkenjejbjjjeh ehjejejej dhejjebhjebjebhjje enjehufbueneenineu nejfjebe ejnene nejne'
-  //   },
-  //   {
-  //     title: 'Music and Covid',
-  //     description: 'titans and steelers will postpone their game on sunday opting to move it to another day in the not too distant future.'
-  //   }
-  // ]
+  // console.log(albums)
+
+  var sort = albums.filter(function(album) {
+      
+      return album.collectionName
+})
+console.log(sort)
 
   return (
     <Carousel interval={5000} navButtonsAlwaysVisible={true}>
       {
-        items.map((item, i) => <MediaCard key={i} item={item}/>)
+        sort.map((item, i) => <MediaCard key={i} item={item}/>)
       }
     </Carousel>
   )
@@ -61,15 +49,15 @@ export function MediaCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image= {item.image}
+          image= {item.artworkUrl100}
           title="music"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {item.title}
+            {item.artistName}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {item.description}
+            {item.collectionName}
           </Typography>
         </CardContent>
       </CardActionArea>

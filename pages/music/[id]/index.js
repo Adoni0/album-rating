@@ -13,19 +13,14 @@ import Grid from '@material-ui/core/Grid'
 const music = ({ featured }) => {
 
   const [albumInfo, setAlbumInfo] = useState([]);
-  // const [artistName, setArtistName] = useState('');
-  // const [albumName, setAlbumName] = useState('');
-  // const [albumCover, setAlbumCover] = useState('');
 
-  // console.log(featured.results)
     const router = useRouter()
     const { id } = router.query
 
     useEffect(() => {
       const { results } = featured;
-      
+     
       setAlbumInfo(results)
-      console.log(albumInfo);
     },[])
   
     // return <p>Title: {id}</p>
