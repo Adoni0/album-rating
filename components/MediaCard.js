@@ -66,7 +66,7 @@ export function MediaCard(props) {
           Queue
         </Button>
         <Button size="small" color="primary">
-          <a target="_blank" href={item.collectionViewUrl}>Preview</a>
+          <a target ="_blank" href={item.collectionViewUrl}>Preview</a>
         </Button>
       </CardActions>
     </Card>

@@ -3,6 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles'
 
+
 const theme = responsiveFontSizes(createMuiTheme())
 
 class MyDocument extends Document {

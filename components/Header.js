@@ -32,7 +32,9 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Button size="small">My Queue</Button>
+        <Button size="small">
+          <Link href="/queue">My Queue</Link>
+          </Button>
         <Typography
           component="h2"
           variant="h5"
