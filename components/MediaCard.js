@@ -54,10 +54,10 @@ export function MediaCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {item.artistName}
+            {item.collectionName}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {item.collectionName}
+            {item.artistName}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -66,7 +66,7 @@ export function MediaCard(props) {
           Queue
         </Button>
         <Button size="small" color="primary">
-          Read More
+          <a target="_blank" href={item.collectionViewUrl}>Preview</a>
         </Button>
       </CardActions>
     </Card>

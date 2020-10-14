@@ -60,16 +60,14 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const sections = [
-  { title: 'Rock', url: '/music/rock' },
-  { title: 'Hip/Hop', url: '#' },
-  { title: 'Alternative', url: '#' },
-  { title: 'Country', url: '#' },
-  { title: 'Dance', url: '#' },
-  { title: 'R&B', url: '#' },
+  { title: 'Rock', url: '/music/Rock' },
+  { title: 'Hip/Hop', url: '/music/Hiphop' },
+  { title: 'Alternative', url: '/music/Alternative' },
+  { title: 'Country', url: '/music/Country' },
+  { title: 'Dance', url: '/music/Dance' },
+  { title: 'R&B', url: '/music/R&B' },
   { title: 'Most Popular', url: '#' },
   { title: 'Highest Rated', url: '#' }
-  // { title: 'Style', url: '#' },
-  // { title: 'Travel', url: '#' },
 ];
 
 const featuredPosts = [
@@ -116,12 +114,12 @@ const Blog = () => {
                     The Social App for Music Lovers
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
-                    Multiple lines of text that form the lede, informing new readers
-                    quickly and efficiently about what&apos;s most interesting in this
-                    post&apos;s contents.
+                    AlbumRate lets you keep track of and rate every album you've listened to, add albums
+                    to a your queue for later listening, or share your thoughts 
+                    on any album in the iTunes library 
                   </Typography>
                   <Link variant="subtitle1" href="#">
-                    Continue reading…
+                    Lets get started…
                   </Link>
                 </div>
               </Grid>

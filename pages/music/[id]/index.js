@@ -35,7 +35,7 @@ const music = ({ featured }) => {
 
                   <Grid container spacing={3}>
                       <Grid item xs={12} sm={7} style={{paddingTop: '30px'}}>
-                          <TemporaryDrawer />
+                          <TemporaryDrawer name={id}/>
                       </Grid>
                       <Grid item xs={12} sm={5} style={{paddingTop: '30px'}}>
                           <SearchBar />
@@ -57,26 +57,26 @@ const music = ({ featured }) => {
   export default music
 
   export async function getStaticProps({ params }) {
-    if(params.id === 'rock'){
-      var response = await axios.get(`https://itunes.apple.com/lookup?id=158038,486597,994656,5040714&entity=album&limit=5`);
+    if(params.id === 'Rock'){
+      var response = await axios.get(`https://itunes.apple.com/lookup?id=158038,486597,994656,5040714&entity=album&limit=3`);
       var featured  = await response.data;
       
       return { props: { featured, },}
     }
-    if(params.id === 'hiphop'){
-      let response = await axios.get(`https://itunes.apple.com/lookup?id=894820464,966309175&entity=album&limit=5`);
+    if(params.id === 'Hiphop'){
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=2715720,105998,894820464,966309175&entity=album&limit=3`);
       var featured = await response.data;
 
       return {props: { featured }}
     }
-    if(params.id === 'country'){
-      let response = await axios.get(`https://itunes.apple.com/lookup?id=123055194,535066,163328523&entity=album&limit=5`);
+    if(params.id === 'Country'){
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=205322,123055194,535066,549836&entity=album&limit=3`);
       var featured = await response.data;
 
       return {props: { featured }}
     }
-    if(params.id === 'dance'){
-      let response = await axios.get(`https://itunes.apple.com/lookup?id=666268457,634763116,16013761,1468290871&entity=album&limit=5`);
+    if(params.id === 'Dance'){
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=666268457,634763116,16013761,1468290871&entity=album&limit=3`);
       var featured = await response.data;
 
       return {props: { featured }}
@@ -87,39 +87,10 @@ const music = ({ featured }) => {
   export async function getStaticPaths() {
 
     return { paths: [
-      { params: { id: 'rock' } },
-      { params: { id: 'hiphop' } }
+      { params: { id: 'Rock' } },
+      { params: { id: 'Hiphop' } },
+      { params: { id: 'Country' } },
+      { params: { id: 'Dance' } }
     ], fallback: false }
   }
 
-  // rock search
-// export default async(req, res) => {
-//     var response = await axios.get(`https://itunes.apple.com/lookup?id=158038,486597,994656,5040714&entity=album&limit=5`)
-//     // const json = await response.json();
-//     res.json(response.data)
-//     // console.log(response)
-// }
-
-// country search
-// export default async(req, res) => {
-//   var response = await axios.get(`https://itunes.apple.com/lookup?id=123055194,535066,163328523&entity=album&limit=5`)
-//   // const json = await response.json();
-//   res.json(response.data)
-//   // console.log(response)
-// }
-
-//dance search
-// export default async(req, res) => {
-//   var response = await axios.get(`https://itunes.apple.com/lookup?id=666268457,634763116,16013761,1468290871&entity=album&limit=5`)
-//   // const json = await response.json();
-//   res.json(response.data)
-//   // console.log(response)
-// }
-
-// hp hop search
-// export default async(req, res) => {
-//   var response = await axios.get(`https://itunes.apple.com/lookup?id=894820464,966309175&entity=album&limit=5`)
-//   // const json = await response.json();
-//   res.json(response.data)
-//   // console.log(response)
-// }

@@ -24,7 +24,8 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TemporaryDrawer() {
+export default function TemporaryDrawer(props) {
+
   const classes = useStyles();
   const [drawer, setDrawer] = useState(false)
 
@@ -49,12 +50,12 @@ export default function TemporaryDrawer() {
       <List>
           <ListItem button>
             <ListItemIcon><PlayCircleFilledIcon /></ListItemIcon>
-            <ListItemText primary={'Rock Most Popular'} />
+            <ListItemText primary={props.name + ' Most Popular'} />
           </ListItem>
 
           <ListItem button>
             <ListItemIcon><MusicVideoIcon /></ListItemIcon>
-            <ListItemText primary={'Rock MusicVideos'} />
+            <ListItemText primary={props.name + ' Music Videos'} />
           </ListItem>
 
           <ListItem button>
