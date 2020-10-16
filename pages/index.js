@@ -67,22 +67,24 @@ const sections = [
   { title: 'Country', url: '/music/Country' },
   { title: 'Dance', url: '/music/Dance' },
   { title: 'R&B', url: '/music/R&B' },
-  { title: 'Most Popular', url: '#' },
+  { title: 'Pop', url: '/music/Pop' },
   { title: 'Highest Rated', url: '#' }
 ];
 
 const featuredPosts = [
   {
-    title: 'Featured post',
-    date: 'Nov 12',
+    title: 'Thriller',
+    date: 'Michael Jackson',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.'
+      'Thriller’s late-1982 release marked the beginning of Michael Jackson’s entry into another level of fame; it also went onto becoming the highest selling album ever',
+      image: "http://imgc.artprintimages.com/images/art-print/michael-jackson-thriller-album_i-G-69-6903-MMBX100Z.jpg"
   },
   {
-    title: 'Post title',
-    date: 'Nov 11',
+    title: 'Dark Side of the Moon',
+    date: 'Pink Floyd',
     description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.'
+      'As much an aural collage as a straightforward art-rock treatise, the album uses its 43 minutes to link speaking voices, sound effects-heavy musique concrète...',
+      image: 'https://img.discogs.com/JdMPRRfk9XngB5O9VdX62xpo3bw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3775445-1343934326-6026.jpeg.jpg'
   }
 ]
 
@@ -145,14 +147,14 @@ const Blog = () => {
                           {post.description}
                         </Typography>
                         <Typography variant="subtitle1" color="primary">
-                          Continue reading...
+                          View Album...
                         </Typography>
                       </CardContent>
                     </div>
                     <Hidden xsDown>
                       <CardMedia
                         className={classes.cardMedia}
-                        image="https://source.unsplash.com/random"
+                        image={post.image}
                         title="Image title"
                       />
                     </Hidden>

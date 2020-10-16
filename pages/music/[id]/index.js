@@ -58,25 +58,43 @@ const music = ({ featured }) => {
 
   export async function getStaticProps({ params }) {
     if(params.id === 'Rock'){
-      var response = await axios.get(`https://itunes.apple.com/lookup?id=158038,486597,994656,5040714&entity=album&limit=3`);
+      var response = await axios.get(`https://itunes.apple.com/lookup?id=158038,486597,994656,5040714&entity=album&limit=2`);
       var featured  = await response.data;
       
       return { props: { featured, },}
     }
     if(params.id === 'Hiphop'){
-      let response = await axios.get(`https://itunes.apple.com/lookup?id=2715720,105998,894820464,966309175&entity=album&limit=3`);
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=2715720,105998,894820464,966309175&entity=album&limit=2`);
       var featured = await response.data;
 
       return {props: { featured }}
     }
     if(params.id === 'Country'){
-      let response = await axios.get(`https://itunes.apple.com/lookup?id=205322,123055194,535066,549836&entity=album&limit=3`);
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=205322,123055194,535066,549836&entity=album&limit=2`);
       var featured = await response.data;
 
       return {props: { featured }}
     }
     if(params.id === 'Dance'){
-      let response = await axios.get(`https://itunes.apple.com/lookup?id=666268457,634763116,16013761,1468290871&entity=album&limit=3`);
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=666268457,634763116,16013761,1468290871&entity=album&limit=2`);
+      var featured = await response.data;
+
+      return {props: { featured }}
+    }
+    if(params.id === 'Alternative'){
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=6906197,3447642,528928008,62820413&entity=album&limit=2`);
+      var featured = await response.data;
+
+      return {props: { featured }}
+    }
+    if(params.id === 'R&B'){
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=642591128,666648192,3261325,1239976329&entity=album&limit=2`);
+      var featured = await response.data;
+
+      return {props: { featured }}
+    }
+    if(params.id === 'Pop'){
+      let response = await axios.get(`https://itunes.apple.com/lookup?id=63346553,442122051,1419227,398128&entity=album&limit=2`);
       var featured = await response.data;
 
       return {props: { featured }}
@@ -90,7 +108,10 @@ const music = ({ featured }) => {
       { params: { id: 'Rock' } },
       { params: { id: 'Hiphop' } },
       { params: { id: 'Country' } },
-      { params: { id: 'Dance' } }
+      { params: { id: 'Dance' } },
+      { params: { id: 'Alternative' } },
+      { params: { id: 'R&B' } },
+      { params: { id: 'Pop' } }
     ], fallback: false }
   }
 
