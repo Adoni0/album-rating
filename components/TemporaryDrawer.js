@@ -13,6 +13,7 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import AlbumIcon from '@material-ui/icons/Album';
 import MusicVideoIcon from '@material-ui/icons/MusicVideo';
 import Link from 'next/link'
+import cyan from '@material-ui/core/colors/red';
 
 
 const useStyles = makeStyles({
@@ -76,7 +77,7 @@ export default function TemporaryDrawer(props) {
   return (
     <div>
       
-          <Button variant="outlined" color="secondary" onClick={toggleDrawer(true)}><AlbumIcon /></Button>
+          <Button variant="outlined" color={cyan[500]} onClick={toggleDrawer(true)}><AlbumIcon /></Button>
           <Drawer anchor='bottom' open={drawer} onClose={toggleDrawer(false)}>
             {list('bottom')}
           </Drawer>

@@ -7,8 +7,10 @@ import Container from '@material-ui/core/Container'
 import { Pony } from '../../../components/MediaCard'
 import TemporaryDrawer from '../../../components/TemporaryDrawer'
 import { ArticleDivider, VideoDivider } from '../../../components/Dividers'
-import SearchBar from '../../../components/SearchBar';
+import SearchBar from '../../../components/SearchBar'
 import Grid from '@material-ui/core/Grid'
+import VidItem from '../../../components/VideoCarousel/VidItem'
+import AppBar from '../../../components/AppBar'
 
 const music = ({ featured }) => {
 
@@ -27,19 +29,23 @@ const music = ({ featured }) => {
     return (
       <>
           <CssBaseline />
-          <Container maxWidth="lg" style={{
+          <Container style={{
               backgroundColor: '#000000',
-              backgroundImage: 'linear-gradient(315deg, #000000 0%, #414141 74%)', height: '103vh'
+              backgroundImage: 'linear-gradient(315deg, #000000 0%, #414141 74%)', height: '103vh',
+              height: '850px',
+              paddingLeft: '20px',
+              paddingRight: '20px'
           }}>
               <Typography component="div">
 
-                  <Grid container spacing={3}>
-                      <Grid item xs={12} sm={7} style={{paddingTop: '30px'}}>
+                  <Grid container spacing={0}>
+                      {/* <Grid item xs={12} sm={7} style={{paddingTop: '30px'}}>
                           <TemporaryDrawer name={id}/>
                       </Grid>
                       <Grid item xs={12} sm={5} style={{paddingTop: '30px'}}>
                           <SearchBar />
-                      </Grid>
+                      </Grid> */}
+                      <AppBar name={id}/>
                   </Grid>
 
                   <br />
@@ -47,7 +53,11 @@ const music = ({ featured }) => {
                   <br />
                   <Pony albums={albumInfo}/>
 
+                  <br />
+                  <VidItem />
+                  
               </Typography>
+            
           </Container>
       </>
 

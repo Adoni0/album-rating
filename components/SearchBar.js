@@ -35,7 +35,7 @@ export default function CustomizedInputBase() {
       
       <InputBase
         className={classes.input}
-        placeholder="Search All Albums"
+        placeholder="Search by Artist"
         inputProps={{ 'aria-label': 'search all albums' }}
       />
       <IconButton type="submit" className={classes.iconButton} aria-label="search">

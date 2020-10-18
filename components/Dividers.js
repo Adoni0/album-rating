@@ -30,7 +30,7 @@ export function ArticleDivider() {
             <ListItem>
                 <ListItemAvatar>
                     <Avatar>
-                        <LibraryMusicIcon />
+                        <LibraryMusicIcon color="secondary"/>
                     </Avatar>
                 </ListItemAvatar>
                 <ListItemText style={{ color: 'white' }} primary="Featured Albums" />

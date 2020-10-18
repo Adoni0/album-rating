@@ -15,7 +15,6 @@ import Container from '@material-ui/core/Container'
 import Header from '../components/Header'
 
 
-
 const useStyles = makeStyles(theme => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`
@@ -77,27 +76,28 @@ const featuredPosts = [
     date: 'Michael Jackson',
     description:
       'Thriller’s late-1982 release marked the beginning of Michael Jackson’s entry into another level of fame; it also went onto becoming the highest selling album ever',
-      image: "http://imgc.artprintimages.com/images/art-print/michael-jackson-thriller-album_i-G-69-6903-MMBX100Z.jpg"
+    image: "http://imgc.artprintimages.com/images/art-print/michael-jackson-thriller-album_i-G-69-6903-MMBX100Z.jpg"
   },
   {
     title: 'Dark Side of the Moon',
     date: 'Pink Floyd',
     description:
       'As much an aural collage as a straightforward art-rock treatise, the album uses its 43 minutes to link speaking voices, sound effects-heavy musique concrète...',
-      image: 'https://img.discogs.com/JdMPRRfk9XngB5O9VdX62xpo3bw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3775445-1343934326-6026.jpeg.jpg'
+    image: 'https://img.discogs.com/JdMPRRfk9XngB5O9VdX62xpo3bw=/fit-in/600x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3775445-1343934326-6026.jpeg.jpg'
   }
 ]
+
 
 const Blog = () => {
   const classes = useStyles()
 
- 
+
   return (
     <>
       <CssBaseline />
-      <Container style={{backgroundColor: '#ffffff', backgroundImage: 'linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%)'}} maxWidth="lg">
-      <Header title="AlbumRate" sections={sections} />
-        
+      <Container style={{ backgroundColor: '#ffffff', backgroundImage: 'linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%)' }} maxWidth="lg">
+        <Header title="AlbumRate" sections={sections} />
+
         <main>
           {/* Main featured post */}
           <Paper className={classes.mainFeaturedPost}>
@@ -118,8 +118,8 @@ const Blog = () => {
                   </Typography>
                   <Typography variant="h5" color="inherit" paragraph>
                     AlbumRate lets you keep track of and rate every album you've listened to, add albums
-                    to a your queue for later listening, or share your thoughts 
-                    on any album in the iTunes library 
+                    to a your queue for later listening, or share your thoughts
+                    on any album in the iTunes library
                   </Typography>
                   <Link variant="subtitle1" href="#">
                     Lets get started…
@@ -163,6 +163,7 @@ const Blog = () => {
               </Grid>
             ))}
           </Grid>
+          <tileData />
           {/* End sub featured posts */}
         </main>
       </Container>
