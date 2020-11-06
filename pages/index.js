@@ -163,7 +163,7 @@ const Blog = () => {
               </Grid>
             ))}
           </Grid>
-          <tileData />
+          {/* <tileData /> */}
           {/* End sub featured posts */}
         </main>
       </Container>

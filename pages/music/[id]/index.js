@@ -39,12 +39,7 @@ const music = ({ featured }) => {
               <Typography component="div">
 
                   <Grid container spacing={0}>
-                      {/* <Grid item xs={12} sm={7} style={{paddingTop: '30px'}}>
-                          <TemporaryDrawer name={id}/>
-                      </Grid>
-                      <Grid item xs={12} sm={5} style={{paddingTop: '30px'}}>
-                          <SearchBar />
-                      </Grid> */}
+                     
                       <AppBar name={id}/>
                   </Grid>
 
