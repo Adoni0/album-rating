@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Carousel from "react-multi-carousel";
 import AlbumRatings from './AlbumRatings';
+import axios from 'axios';
+
 
 const responsive = {
   desktop: {
@@ -70,10 +72,10 @@ export function Pony(props) {
       itemClass="carousel-item-padding-40-px"
     >
       {
-        sort.map((item, i) => 
-        <div>
-        <MediaCard key={i} item={item} />
-        </div>
+        sort.map((item, i) =>
+          <div>
+            <MediaCard key={i} item={item} />
+          </div>
         )
       }
     </Carousel>
@@ -84,6 +86,16 @@ export function Pony(props) {
 export function MediaCard(props) {
   const classes = useStyles();
   const { item } = props;
+
+  function handleQueueClick(id, artist, album) {
+    axios.post('/api/create', {
+      // id: id
+      albumName: album,
+      artistName: artist
+    })
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
+  }
 
   return (
     <Card style={{ backgroundColor: 'white' }} className={classes.root}>
@@ -104,7 +116,7 @@ export function MediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="secondary">
+        <Button onClick={() => handleQueueClick(item.collectionId, item.artistName, item.collectionName)} size="small" color="secondary">
           Queue
         </Button>
         <Button size="small" color="primary">

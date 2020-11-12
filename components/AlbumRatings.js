@@ -19,9 +19,10 @@ IconContainer.propTypes = {
 export default function AlbumRatings() {
   return (
     <div>
-      <Box component="fieldset" mb={3} borderColor="transparent">
+      <Box component="fieldset" ml={9} mt={1} borderColor="transparent">
         {/* <Typography component="legend">Rate Me!</Typography> */}
         <Rating
+          size="large"
           name="customized-empty"
           defaultValue={0}
           precision={0.5}

@@ -5,13 +5,11 @@ var Schema = mongoose.Schema;
 var AlbumSchema = new Schema({ //data stored in users queue
 
     albumName: {
-        type: String,
-        required: true
+        type: String
     },
 
     albumArtistName: {
-        type: String,
-        required: true
+        type: String
     },
 
     albumCoverArt: {
