@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from "react-multi-carousel";
-import RecipeReviewCard from '../components/RecipeReviewCard';
+import QueueCard from '../components/QueueCard';
 // import "react-multi-carousel/lib/styles.css";
 
 
@@ -45,14 +45,14 @@ const queue = () => {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
         >
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
+            <QueueCard />
+            <QueueCard />
+            <QueueCard />
+            <QueueCard />
+            <QueueCard />
+            <QueueCard />
+            <QueueCard />
+            <QueueCard />
         </Carousel>
         <br />
         <br />
