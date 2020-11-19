@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from "react-multi-carousel";
 import QueueCard from '../components/QueueCard';
+import axios from 'axios';
 // import "react-multi-carousel/lib/styles.css";
 
 
@@ -24,62 +25,74 @@ const queue = () => {
         }
     };
 
+    const [albums, setAlbums] = useState([]);
+
+    useEffect(() => {
+        axios.get('/api/getAlbums')
+            .then(albums => {
+                // setAlbums(albums)
+                // const { result } = albums;
+                console.log(albums)
+            })
+            .catch(error => console.log(error))
+    }, [])
+
 
     return (
         <>
-        <Carousel
-            swipeable={true}
-            draggable={false}
-            showDots={true}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            //   autoPlay={this.props.deviceType !== "mobile" ? true : false}
-            //   autoPlaySpeed={1000}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            //   deviceType={this.props.deviceType}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-        >
-            <QueueCard />
-            <QueueCard />
-            <QueueCard />
-            <QueueCard />
-            <QueueCard />
-            <QueueCard />
-            <QueueCard />
-            <QueueCard />
-        </Carousel>
-        <br />
-        <br />
-        <Carousel
-            swipeable={true}
-            draggable={false}
-            showDots={true}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-        >
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-            <RecipeReviewCard />
-        </Carousel>
+            <Carousel
+                swipeable={true}
+                draggable={false}
+                showDots={true}
+                responsive={responsive}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                //   autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                //   autoPlaySpeed={1000}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                //   deviceType={this.props.deviceType}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+            >
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+            </Carousel>
+            <br />
+            <br />
+            <Carousel
+                swipeable={true}
+                draggable={false}
+                showDots={true}
+                responsive={responsive}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+            >
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+                <QueueCard />
+            </Carousel>
         </>
     )
 }

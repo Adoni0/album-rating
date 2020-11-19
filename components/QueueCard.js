@@ -44,13 +44,7 @@ const useStyles = makeStyles((theme) => ({
 export default function QueueCard() {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
-  const [albums, setAlbums] = useState([]);
-
-  useEffect(() => {
-    axios.get('/api/getAlbums')
-    .then(albums => setAlbums(albums))
-    .catch(error => console.log(error))
-  },[])
+  
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
