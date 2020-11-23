@@ -30,9 +30,9 @@ const queue = () => {
     useEffect(() => {
         axios.get('/api/getAlbums')
             .then(albums => {
-                // setAlbums(albums)
-                // const { result } = albums;
-                console.log(albums)
+                setAlbums(albums.data.result)
+                // const result = albums.data;
+                console.log(albums.data.result)
             })
             .catch(error => console.log(error))
     }, [])
@@ -58,41 +58,12 @@ const queue = () => {
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
             >
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
+                {albums.map(alb => (
+                    <QueueCard albumQueue={alb}/>
+                ))}
+                    
             </Carousel>
-            <br />
-            <br />
-            <Carousel
-                swipeable={true}
-                draggable={false}
-                showDots={true}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-            >
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-                <QueueCard />
-            </Carousel>
+            
         </>
     )
 }

@@ -3,6 +3,6 @@
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
   "/queue": "pages/queue.js",
-  "/": "pages/index.js",
+  "/music/[id]": "pages/music/[id].js",
   "/api/getAlbums": "pages/api/getAlbums.js"
 }

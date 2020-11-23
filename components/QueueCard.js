@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function QueueCard() {
+export default function QueueCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
   
@@ -59,7 +59,8 @@ export default function QueueCard() {
   }
 
   return (
-    <Card className={classes.root}>
+    // this.props.albumQueue.map(album => (
+      <Card className={classes.root}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -71,8 +72,8 @@ export default function QueueCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Album or MV title"
-        subheader="Artist Name"
+        title={props.albumQueue.album.name}
+        subheader={props.albumQueue.album.artist}
       />
       <CardMedia
         className={classes.media}
@@ -112,5 +113,7 @@ export default function QueueCard() {
         </CardContent>
       </Collapse>
     </Card>
+    // ))
+    
   );
 }
